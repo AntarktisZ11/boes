@@ -30,4 +30,4 @@ jobs:
           arduino-cli lib install "ArduinoThread"
 
       - name: Compile Sketch
-        run: arduino-cli compile -b ${{ matrix.fqbn }} display/display.ino
+        run: arduino-cli compile -b ${{ matrix.fqbn }} code/display/display.ino
