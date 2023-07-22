@@ -27,7 +27,7 @@ uint8_t oePin      = 13;
 uint8_t startBtnPin = 15;           // Button that triggers a timer.start() call if triggered
 uint8_t stopBtnPin = 14;            // Button that triggers a timer.stop() call if triggered
 uint8_t resetBtnPin = 17;           // Button that triggers a timer.reset() call if triggered
-uint8_t sensPot = 26;               // Potentimeter that controls the sensitivity of the vibration sensor
+uint8_t sensPot = 26;               // Potentiometer that controls the sensitivity of the vibration sensor
 uint8_t judgeVibSensor = 27;        // Vibration sensor that triggers a timer.stop() call if triggered
 uint8_t participantVibSensor = 28;  // Vibration sensor that triggers a timer.start() call if triggered
 uint8_t buzzer = 6;
@@ -78,6 +78,7 @@ void setup(void) {
     while(true);
   }
 
+  // TODO Maybe change font as adjacent zeroes touch each other
   matrix.setFont(&FreeSerifBold9pt7b); // Use nice bitmap font
   matrix.setTextColor(0xFFFF);         // White
   matrix.setRotation(2);
@@ -265,6 +266,8 @@ void updateTimer() {
   // TODO Add two of these, one for judge and one for participant 
   // make them changeable from the web server
   uint16_t sensPotValue = (1024 * 0.01) + (0.33 * analogRead(sensPot));
+
+  //! Is it worth only updating the relevant sensor instead of both?
   uint16_t judgeVibSensorValue = analogRead(judgeVibSensor);
   uint16_t participantVibSensorValue = analogRead(participantVibSensor);
 
@@ -287,9 +290,10 @@ void updateTimer() {
       break;
 
     default:
+      //! This should be fully ignored if it is already started.
       if (judgeVibSensorValue >= sensPotValue) {
         timer.start();
-      } else if (participantVibSensorValue >= sensPotValue) {
+      } else if (participantVibSensorValue >= sensPotValue) { //! This should be checked only if it is currently running.
         // Participant only allowed to stop after 1.5 seconds after judge has started
         if (time_us_64() - timer.start_timestamp >= start_grace_period_us) {
           timer.stop();

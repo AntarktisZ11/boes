@@ -3,6 +3,8 @@
 #define _1_S_IN_US 1000000
 #define _1_MS_IN_US (_1_S_IN_US / 1000)
 
+// TODO Make states more clear. Can you enter Run
+// from Init or only Reset, what about Pause?
 typedef enum
 {
     Pause,
