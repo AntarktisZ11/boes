@@ -30,4 +30,10 @@ jobs:
           arduino-cli lib install "ArduinoThread"
 
       - name: Compile Sketch
-        run: arduino-cli compile -b ${{ matrix.fqbn }} code/display/display.ino
+        run: arduino-cli compile -b ${{ matrix.fqbn }} --export-binaries code/display/display.ino
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v3
+        with:
+          name: boes-binaries
+          path: code/display/build/
