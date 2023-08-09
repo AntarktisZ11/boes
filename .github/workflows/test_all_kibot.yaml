@@ -1,0 +1,23 @@
+name: Test KiBot reusable workflow - Output all
+
+on:
+  workflow_dispatch:
+    inputs:
+      KiBot-Verbosity:
+        description: "Log levels for KiBot"
+        required: false
+        default: "0"
+        type: choice
+        options:
+          - "0"
+          - "1"
+          - "2"
+          - "3"
+
+jobs:
+  Output_all_KiBot:
+    uses: AntarktisZ11/reusable-workflows/.github/workflows/kicad_test_all.yaml@main
+    with:
+      KiCadProjectName: boes
+      KiCadProjectDir: pcb
+      KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
