@@ -1,5 +1,6 @@
 "Part","Value","Footprint","References","Quantity Per PCB","Farnell Nr","Datasheet"
-"C","100n","C_0603_1608Metric","C1 C2","2","","~"
+"C","100n","C_0603_1608Metric","C1 C2 C4","3","","~"
+"C","1u","C_0603_1608Metric","C3","1","","~"
 "D","1N4148","D_MiniMELF","D2","1","","~"
 "BAV99","BAV99","SOT-23","D1","1","","https://assets.nexperia.com/documents/data-sheet/BAV99_SER.pdf"
 "R","R","R_0603_1608Metric","R1 R2","2","","~"
