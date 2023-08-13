@@ -58,19 +58,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download main PCB docs
+        uses: actions/download-artifact@v3
         if: needs.PCB_change_main.outputs.artifact_uploaded == 'true'
         with:
           name: pcb-boes-main
           path: docs/pcb-boes-main
 
-      - uses: actions/download-artifact@v3
+      - name: Download sensor PCB docs
+        uses: actions/download-artifact@v3
         if: needs.PCB_change_sensor.outputs.artifact_uploaded == 'true'
         with:
           name: pcb-boes-sensor
           path: docs/pcb-boes-sensor
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit new documentation
+        uses: stefanzweifel/git-auto-commit-action@v4
         if: inputs.Auto-commit
         with:
           commit_message: Update PCB Documentation
