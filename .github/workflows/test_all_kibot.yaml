@@ -1,4 +1,4 @@
-name: Test KiBot reusable workflow - Output all
+name: Full KiCad documentation
 
 on:
   workflow_dispatch:
@@ -15,9 +15,18 @@ on:
           - "3"
 
 jobs:
-  Output_all_KiBot:
+  # Uploads an artifact
+  Main_PCB_full_docs:
     uses: AntarktisZ11/reusable-workflows/.github/workflows/kicad_test_all.yaml@main
     with:
       KiCadProjectName: boes
+      KiCadProjectDir: pcb
+      KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
+
+  # Uploads an artifact
+  Sensor_PCB_full_docs:
+    uses: AntarktisZ11/reusable-workflows/.github/workflows/kicad_test_all.yaml@main
+    with:
+      KiCadProjectName: boes_sensor
       KiCadProjectDir: pcb
       KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
