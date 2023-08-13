@@ -23,7 +23,7 @@ on:
 
   # Trigger when PCB is edited
   push:
-    branches: [main]
+    branches: [main, master]
     paths:
       - "**.kicad_sch"
       - "**.kicad_pcb"
