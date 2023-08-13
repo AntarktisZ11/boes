@@ -1,5 +1,12 @@
 name: build
-on: [push, pull_request]
+on:
+  pull_request:
+    paths:
+      - "code/**"
+
+  push:
+    paths:
+      - "code/**"
 
 jobs:
   test-matrix:
