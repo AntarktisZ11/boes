@@ -15,7 +15,7 @@ jobs:
         arduino-platform: ["rp2040:rp2040"]
         include:
           - arduino-platform: "rp2040:rp2040"
-            fqbn: "rp2040:rp2040:rpipicow"
+            fqbn: "rp2040:rp2040:rpipico"
 
     runs-on: ubuntu-latest
 
