@@ -7,7 +7,7 @@
   (title_block
     (title "Bamses Øhlhäfvarstoppur (Bøs)")
     (date "${SCH_DATE}")
-    (rev "${SCH_REV]")
+    (rev "${SCH_REV}")
   )
 
   (lib_symbols
