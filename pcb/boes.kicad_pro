@@ -56,7 +56,15 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "footprint_type_mismatch|125299000|87630000|7af93fec-74f0-4407-b131-794d649b09c9|00000000-0000-0000-0000-000000000000",
+        "isolated_copper|139654575|74680502|4087a15e-48d4-462c-8be4-e71e42607ef2|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|122722691|63417102|0e8ffd26-4770-473f-af7d-b5d7db086475|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|122874000|66660000|0915a923-ed3d-4139-8c37-11f2b770cc90|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|127724000|66660000|f579685c-309b-4e20-bf1a-b0b3aa0699c5|00000000-0000-0000-0000-000000000000",
+        "items_not_allowed|128024000|63630000|5d50b6a5-eabd-4a01-bcad-ed17f0e5fb87|00000000-0000-0000-0000-000000000000",
+        "unresolved_variable|106680000|121040000|1cf98e11-57da-45d7-a15e-40b35ffadcc6|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -94,7 +102,7 @@
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -196,7 +204,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "lib_symbol_issues|1016000|546100|87d8d75c-b8ae-4d86-8b25-6b884dffd98e|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|1460500|330200|de4d0a72-c8b0-40c5-a090-3e0fef4170cb|00000000-0000-0000-0000-000000000000|||",
+      "unresolved_variable|2000022|1931072|00000000-0000-0000-0000-000000000000|00000000-0000-0000-0000-000000000000|||",
+      "unresolved_variable|2630022|1931072|00000000-0000-0000-0000-000000000000|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -396,7 +409,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
