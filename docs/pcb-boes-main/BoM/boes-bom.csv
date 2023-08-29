@@ -1,6 +1,7 @@
 "Part","Value","Footprint","References","Quantity Per PCB","Farnell Nr","Datasheet"
 "Buzzer","Buzzer","","BZ1","1","","https://www.farnell.com/datasheets/1504043.pdf"
-"Screw_Terminal_01x02","Display power","TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","J9","1","","~"
+"D_Schottky","D_Schottky","D_SMA-SMB_Universal_Handsoldering","D1","1","","~"
+"Screw_Terminal_01x02","+5V External","TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","J9","1","","~"
 "Conn_02x08_Odd_Even","HUB75 Display ctrl","IDC-Header_2x08_P2.54mm_Vertical","J10","1","","~"
 "Conn_01x03","Pot_J","JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical","J4 J6 J7 P4","4","","~"
 "Conn_01x02","SW_A","JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical","J1 J2 J3 J8 P1 P2 P3 P8","8","","~"
