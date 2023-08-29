@@ -38,6 +38,19 @@ TODO add pinout
 ![PCB top-view SVG](./docs/pcb-boes-main/boes-top.svg)
 ![PCB bottom-view SVG](./docs/pcb-boes-main/boes-bottom.svg)
 
+### USB-C Power distribution PCB
+
+[Schematic PDF](./docs/pcb-boes-usb-c/boes_usb-c-schematic.pdf)
+
+[CSV BoM](./docs/pcb-boes-usb-c/BoM/boes_usb-c-bom.csv)
+
+[Interactive BoM](./docs/pcb-boes-usb-c/BoM/boes_usb-c-ibom.html) (Download and view in browser.)
+
+#### Top and bottom view of PCB
+
+![PCB top-view SVG](./docs/pcb-boes-usb-c/boes_usb-c-top.svg)
+![PCB bottom-view SVG](./docs/pcb-boes-usb-c/boes_usb-c-bottom.svg)
+
 ### Sensor PCB
 
 [Schematic PDF](./docs/pcb-boes-sensor/boes_sensor-schematic.pdf)
