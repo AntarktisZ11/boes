@@ -30,3 +30,11 @@ jobs:
       KiCadProjectName: boes_sensor
       KiCadProjectDir: pcb
       KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
+
+  # Uploads an artifact
+  USB-C_PCB_full_docs:
+    uses: AntarktisZ11/reusable-workflows/.github/workflows/kicad_test_all.yaml@main
+    with:
+      KiCadProjectName: boes_usb-c
+      KiCadProjectDir: pcb
+      KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}

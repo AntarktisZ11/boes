@@ -47,6 +47,15 @@ jobs:
       KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
       Artifact-name: pcb-boes-sensor
 
+  # Generate PCB documentation for sensor board
+  PCB_change_usb-c:
+    uses: AntarktisZ11/reusable-workflows/.github/workflows/kicad_pcb_change.yaml@main
+    with:
+      KiCadProjectName: boes_usb-c
+      KiCadProjectDir: pcb
+      KiBot-Verbosity: ${{ inputs.KiBot-Verbosity || '0' }}
+      Artifact-name: pcb-boes-usb-c
+
   # Create a commit with the latest PCB documentation
   Upload_PCB_Documentation:
     permissions:
@@ -54,7 +63,7 @@ jobs:
       # added or changed files to the repository.
       contents: write
 
-    needs: [PCB_change_main, PCB_change_sensor]
+    needs: [PCB_change_main, PCB_change_sensor, PCB_change_usb-c]
     runs-on: ubuntu-latest
 
     steps:
@@ -74,6 +83,13 @@ jobs:
         with:
           name: pcb-boes-sensor
           path: docs/pcb-boes-sensor
+
+      - name: Download USB-C PCB docs
+        uses: actions/download-artifact@v3
+        if: needs.PCB_change_usb-c.outputs.artifact_uploaded == 'true'
+        with:
+          name: pcb-boes-usb-c
+          path: docs/pcb-boes-usb-c
 
       - name: Commit new documentation
         uses: stefanzweifel/git-auto-commit-action@v4
