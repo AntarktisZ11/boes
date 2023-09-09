@@ -17,20 +17,20 @@
 #define BLUE     0x00FF
 
 // Display controller pins
-uint8_t rgbPins[]  = {2, 3, 4, 5, 8, 9};
-uint8_t addrPins[] = {10, 16, 18, 20, 22};
-uint8_t clockPin   = 11;
-uint8_t latchPin   = 12;
-uint8_t oePin      = 13;
+uint8_t rgbPins[]  = {4, 5, 3, 2, 6, 7};
+uint8_t addrPins[] = {9, 10, 11, 12, 8};
+uint8_t clockPin   = 15;
+uint8_t latchPin   = 13;
+uint8_t oePin      = 14;
 
 // Button/input pins
-uint8_t startBtnPin = 15;           // Button that triggers a timer.start() call if triggered
-uint8_t stopBtnPin = 14;            // Button that triggers a timer.stop() call if triggered
+uint8_t startBtnPin = 22;           // Button that triggers a timer.start() call if triggered
+uint8_t stopBtnPin = 21;            // Button that triggers a timer.stop() call if triggered
 uint8_t resetBtnPin = 17;           // Button that triggers a timer.reset() call if triggered
-uint8_t sensPot = 26;               // Potentiometer that controls the sensitivity of the vibration sensor
+uint8_t sensPot = 28;               // Potentiometer that controls the sensitivity of the vibration sensor
 uint8_t judgeVibSensor = 27;        // Vibration sensor that triggers a timer.stop() call if triggered
-uint8_t participantVibSensor = 28;  // Vibration sensor that triggers a timer.start() call if triggered
-uint8_t buzzer = 6;
+uint8_t participantVibSensor = 26;  // Vibration sensor that triggers a timer.start() call if triggered
+uint8_t buzzer = 16;
 
 Adafruit_Protomatter matrix(
   64,          // Matrix width in pixels
