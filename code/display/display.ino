@@ -81,7 +81,7 @@ void setup(void) {
   // TODO Maybe change font as adjacent zeroes touch each other
   matrix.setFont(&FreeSerifBold9pt7b); // Use nice bitmap font
   matrix.setTextColor(0xFFFF);         // White
-  matrix.setRotation(2);
+  matrix.setRotation(0);
   int16_t  x1, y1;
   uint16_t w, h;
   sprintf(str, "%s:%s", timer.sec_counter, timer.ms_counter); // Get initial text to get bounds
