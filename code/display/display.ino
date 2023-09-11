@@ -11,10 +11,11 @@
 // Color definitions used for setting text and background color
 #define BLACK    0x0000
 #define RED      0xF800
-#define GREEN    0x07E0
+#define ORANGE   0xF324
 #define YELLOW   0xFF00
-#define WHITE    0xFFFF
+#define GREEN    0x07E0
 #define BLUE     0x00FF
+#define WHITE    0xFFFF
 
 // Display controller pins
 uint8_t rgbPins[]  = {4, 5, 3, 2, 6, 7};
@@ -125,8 +126,9 @@ void setup(void) {
   }
 
   // Startup screen
-  matrix.fillScreen(BLACK);
-  matrix.drawRGBBitmap(0, 0, logo, 64, 32);
+  matrix.setTextColor(ORANGE);
+  sprintf(str, "Delta  "); // Get initial text to get bounds
+  matrix.print(str);
   matrix.show();
 
   // Wait for wifi module to load
