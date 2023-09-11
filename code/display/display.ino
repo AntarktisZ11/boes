@@ -126,8 +126,10 @@ void setup(void) {
   }
 
   // Startup screen
+  matrix.fillScreen(0);
+  matrix.setCursor(textX, textY);
   matrix.setTextColor(ORANGE);
-  sprintf(str, "Delta  "); // Get initial text to get bounds
+  sprintf(str, "Delta"); // Get initial text to get bounds
   matrix.print(str);
   matrix.show();
 
